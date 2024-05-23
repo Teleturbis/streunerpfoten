@@ -28,7 +28,7 @@ const product = {
   },
 };
 
-export default function PetDetails() {
+export default function PetDetails({ params }: { params: { id: string } }) {
   return (
     <div className='bg-white'>
       <div className='pb-16 pt-6 sm:pb-24'>
@@ -62,7 +62,7 @@ export default function PetDetails() {
             ))}
             <li className='text-sm'>
               <a
-                href={product.href}
+                href={`/pets/${params.id}`}
                 aria-current='page'
                 className='font-medium text-gray-500 hover:text-gray-600'
               >

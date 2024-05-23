@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: 'tailwindui.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
     ],
   },
 };
