@@ -15,6 +15,8 @@ export type PetType = {
   imageSrc: string;
   imageAlt: string;
   info: string;
+  type: string;
+  age: number; // in months
 };
 
 export default function HighlightCard({ pet }: HighlightCardProps) {

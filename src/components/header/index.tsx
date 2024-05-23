@@ -27,7 +27,7 @@ export default function Header() {
     <div className='sticky top-0 z-50 bg-white'>
       {/* Mobile menu */}
       <Transition show={open} as={Fragment}>
-        <Dialog className='relative z-40 lg:hidden' onClose={setOpen}>
+        <Dialog className='relative z-50 lg:hidden' onClose={setOpen}>
           <TransitionChild
             as={Fragment}
             enter='transition-opacity ease-linear duration-300'
