@@ -16,6 +16,14 @@ const de: LangType = {
             ],
           },
           {
+            title: 'Vermittlung',
+            items: [
+              { name: 'Ablauf', href: '/procedure' },
+              { name: 'Schützlinge', href: '/pets' },
+              { name: 'Selbstauskunft', href: '/disclosure' },
+            ],
+          },
+          {
             title: 'Patenschaft',
             items: [
               { name: 'Pate werden', href: '#' },
@@ -44,6 +52,10 @@ const de: LangType = {
             href: '#',
           },
         ],
+      },
+      {
+        name: 'Neuigkeiten',
+        href: '/blogs',
       },
       { name: 'Kontakt', href: '/contact' },
     ],

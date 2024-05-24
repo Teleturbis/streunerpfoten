@@ -10,6 +10,7 @@ import {
   PopoverPanel,
   PopoverGroup,
   PopoverButton,
+  CloseButton,
 } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
@@ -66,12 +67,13 @@ export default function Header() {
                   {navigation.map((navItem, itemIdx) =>
                     navItem.href ? (
                       <li key={navItem.name} className='py-2'>
-                        <Link
+                        <CloseButton
+                          as={Link}
                           href={navItem.href}
                           className='block px-5 font-semibold text-gray-900 hover:text-gray-800'
                         >
                           {navItem.name}
-                        </Link>
+                        </CloseButton>
                       </li>
                     ) : (
                       <li key={itemIdx} className='pb-5 pt-2'>
@@ -85,7 +87,9 @@ export default function Header() {
                                 key={itemIdx}
                                 className='block text-sm text-gray-900 hover:text-gray-800'
                               >
-                                <Link href={item.href}>{item.title}</Link>
+                                <CloseButton as={Link} href={item.href}>
+                                  {item.title}
+                                </CloseButton>
                               </li>
                             ) : (
                               <div key={itemIdx}>
@@ -98,9 +102,12 @@ export default function Header() {
                                       key={subItemIdx}
                                       className='block text-sm text-gray-900 hover:text-gray-800'
                                     >
-                                      <Link href={subItem.href}>
+                                      <CloseButton
+                                        as={Link}
+                                        href={subItem.href}
+                                      >
                                         {subItem.name}
-                                      </Link>
+                                      </CloseButton>
                                     </li>
                                   ))}
                                 </ul>
@@ -138,13 +145,14 @@ export default function Header() {
                       <div className='flex h-full justify-center space-x-8'>
                         {navigation.map((navItem) =>
                           navItem.href ? (
-                            <Link
+                            <CloseButton
+                              as={Link}
                               key={navItem.name}
                               href={navItem.href}
                               className='flex items-center text-sm font-medium text-gray-700 hover:text-gray-800'
                             >
                               {navItem.name}
-                            </Link>
+                            </CloseButton>
                           ) : (
                             <Popover key={navItem.name} className='flex'>
                               {({ open }) => (
@@ -186,13 +194,14 @@ export default function Header() {
                                                 (item, itemIdx) =>
                                                   item.href ? (
                                                     <div key={itemIdx}>
-                                                      <Link
+                                                      <CloseButton
+                                                        as={Link}
                                                         id={`desktop-featured-heading-${itemIdx}`}
                                                         href={item.href}
                                                         className='font-medium text-gray-900'
                                                       >
                                                         {item.title}
-                                                      </Link>
+                                                      </CloseButton>
                                                     </div>
                                                   ) : (
                                                     <div key={itemIdx}>
@@ -213,14 +222,15 @@ export default function Header() {
                                                               key={subItem.name}
                                                               className='flex'
                                                             >
-                                                              <Link
+                                                              <CloseButton
+                                                                as={Link}
                                                                 href={
                                                                   subItem.href
                                                                 }
                                                                 className='hover:text-gray-800'
                                                               >
                                                                 {subItem.name}
-                                                              </Link>
+                                                              </CloseButton>
                                                             </li>
                                                           )
                                                         )}

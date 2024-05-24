@@ -13,11 +13,15 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowTopRightOnSquareIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline';
 import { ChevronDownIcon, PlusIcon } from '@heroicons/react/20/solid';
 
 import de from '@/lang/de';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 type Props = {};
 
@@ -312,6 +316,17 @@ export default function Pets({}: Props) {
             <p className='mt-4 text-base text-gray-500'>
               Hier findest du unsere Hunde und Katzen, die ein neues Zuhause
               suchen.
+            </p>
+            <p className='text-base text-gray-500 flex gap-1 items-center'>
+              Wie du einem unserer Schützlinge ein neues Zuhause geben kannst
+              erfährst du hier:{' '}
+              <Link
+                href='/procedure'
+                className='font-semibold hover:text-gray-800 flex gap-1 items-center'
+              >
+                Ablauf einer Adoption
+                <ArrowTopRightOnSquareIcon className='h-4 w-4' />
+              </Link>
             </p>
           </div>
 

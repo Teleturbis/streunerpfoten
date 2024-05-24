@@ -1,21 +1,17 @@
+'use client';
+
 import {
   CheckCircleIcon,
   InformationCircleIcon,
   HomeIcon,
 } from '@heroicons/react/20/solid';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 // TODO: Implement Markdown rendering
 
 export default function BlogArticle({ params }: { params: { id: string } }) {
-  const pages = [
-    { name: 'Beiträge', href: '/blogs', current: false },
-    {
-      name: 'JavaScript for Beginners',
-      href: `/blogs/${params.id}`,
-      current: true,
-    },
-  ];
+  const router = useRouter();
 
   return (
     <>
@@ -38,28 +34,45 @@ export default function BlogArticle({ params }: { params: { id: string } }) {
               </a>
             </div>
           </li>
-          {pages.map((page) => (
-            <li key={page.name} className='flex'>
-              <div className='flex items-center'>
-                <svg
-                  className='h-full w-6 flex-shrink-0 text-gray-300'
-                  viewBox='0 0 24 44'
-                  preserveAspectRatio='none'
-                  fill='currentColor'
-                  aria-hidden='true'
-                >
-                  <path d='M.293 0l22 22-22 22h1.414l22-22-22-22H.293z' />
-                </svg>
-                <a
-                  href={page.href}
-                  className='ml-4 text-sm font-medium text-gray-500 hover:text-gray-700'
-                  aria-current={page.current ? 'page' : undefined}
-                >
-                  {page.name}
-                </a>
-              </div>
-            </li>
-          ))}
+          <li className='flex'>
+            <div className='flex items-center'>
+              <svg
+                className='h-full w-6 flex-shrink-0 text-gray-300'
+                viewBox='0 0 24 44'
+                preserveAspectRatio='none'
+                fill='currentColor'
+                aria-hidden='true'
+              >
+                <path d='M.293 0l22 22-22 22h1.414l22-22-22-22H.293z' />
+              </svg>
+              <button
+                className='ml-4 text-sm font-medium text-gray-500 hover:text-gray-700'
+                aria-current='page'
+                onClick={() => router.back()}
+              >
+                Beiträge
+              </button>
+            </div>
+          </li>
+          <li className='flex'>
+            <div className='flex items-center'>
+              <svg
+                className='h-full w-6 flex-shrink-0 text-gray-300'
+                viewBox='0 0 24 44'
+                preserveAspectRatio='none'
+                fill='currentColor'
+                aria-hidden='true'
+              >
+                <path d='M.293 0l22 22-22 22h1.414l22-22-22-22H.293z' />
+              </svg>
+              <button
+                className='ml-4 text-sm font-medium text-gray-500 hover:text-gray-700'
+                aria-current='page'
+              >
+                {'JavaScript for Beginners'}
+              </button>
+            </div>
+          </li>
         </ol>
       </nav>
 
