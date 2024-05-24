@@ -2,7 +2,7 @@
 
 import de from '@/lang/de';
 import { BlogCard, BlogCardSkeleton, Pagination } from '@/components';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Blog, getBlogs } from '@/mocks/blogs';
 import { usePathname, useSearchParams } from 'next/navigation';
 
@@ -77,14 +77,16 @@ export default function BlogsOverview() {
               ))}
         </div>
 
-        <div className='mt-10'>
-          <Pagination
-            page={page}
-            limit={limit}
-            total={total}
-            changePage={(e: number) => changePage(e)}
-          />
-        </div>
+        <Suspense>
+          <div className='mt-10'>
+            <Pagination
+              page={page}
+              limit={limit}
+              total={total}
+              changePage={(e: number) => changePage(e)}
+            />
+          </div>
+        </Suspense>
       </div>
     </div>
   );
