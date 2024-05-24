@@ -2,7 +2,7 @@
 
 import de from '@/lang/de';
 import { BlogCard, BlogCardSkeleton, Pagination } from '@/components';
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Blog, getBlogs } from '@/mocks/blogs';
 import { usePathname, useSearchParams } from 'next/navigation';
 

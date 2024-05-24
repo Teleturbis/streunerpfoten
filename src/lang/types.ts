@@ -14,6 +14,7 @@ export type LangType = {
     title: string;
     intro: string;
   };
+  disclosure: any;
 };
 
 export type HeaderType = {
