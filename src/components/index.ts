@@ -3,6 +3,7 @@ import Header from './header';
 import Footer from './footer';
 import Hero from './hero';
 import HighlightSection from './highlightSection';
+import BlogSection from './blogSection';
 
 // Icons
 import Logo from './Logo';
@@ -23,6 +24,7 @@ export {
   Footer,
   Hero,
   HighlightSection,
+  BlogSection,
 
   // Icons
   Logo,
